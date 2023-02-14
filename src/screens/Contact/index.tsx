@@ -1,22 +1,46 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 interface Props {
   navigation?: any;
 }
 const Contact = ({navigation}: Props) => {
   return (
-    <View style={styles.container}>
-      <Text>HOLAAA</Text>
-    </View>
+    <>
+      <SafeAreaView />
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <View style={styles.btn}>
+          <Text>Go back</Text>
+        </View>
+      </TouchableOpacity>
+      <View style={styles.container}>
+        <Text>CONTACTS</Text>
+      </View>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
+  btn: {
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderWidth: 1,
+    width: '25%',
+    marginLeft: 20,
+    marginTop: 10,
+    alignItems: 'center',
+    borderRadius: 15,
+  },
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'red'
+    justifyContent: 'center',
   },
 });
 

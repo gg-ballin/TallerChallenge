@@ -5,6 +5,7 @@ import Home from '../screens/Home';
 import Contact from '../screens/Contact';
 import {NavigationContainer} from '@react-navigation/native';
 import Start from '../screens/Start';
+import Screen2 from '../screens/Home/Screen2';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -16,6 +17,7 @@ function HomeStack() {
         headerShown: false,
       })}>
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Screen_2" component={Screen2} />
     </Tab.Navigator>
   );
 }

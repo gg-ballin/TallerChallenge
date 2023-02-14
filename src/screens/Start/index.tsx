@@ -20,6 +20,8 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import BurgerMenuBtn from '../../components/BurgerMenuBtn';
+import {scale} from '../../utils/scale';
+import Background from './Background';
 
 interface Props {
   navigation?: any;
@@ -49,7 +51,6 @@ const Start = ({navigation}: Props) => {
       }
     },
   });
-
   const rStyle = useAnimatedStyle(() => {
     const rotate = interpolate(
       translateX.value,
@@ -80,10 +81,7 @@ const Start = ({navigation}: Props) => {
     <View style={styles.container}>
       <SafeAreaView />
       <StatusBar barStyle={'light-content'} backgroundColor={'#1e1e23'} />
-      <View style={styles.containerBckgrnd}>
-        
-        <Text>HOLA</Text>
-      </View>
+      <Background navigation={navigation} />
       <PanGestureHandler onGestureEvent={panGestureEvent}>
         <Animated.View style={[styles.animatedView, rStyle]}>
           <View style={styles.containerTitle}>
@@ -96,7 +94,7 @@ const Start = ({navigation}: Props) => {
                 }
               }}
             />
-            <Text style={{color: 'gray', fontSize: 20}}>START</Text>
+            <Text style={{color: 'gray', fontSize: scale(17)}}>START</Text>
           </View>
         </Animated.View>
       </PanGestureHandler>
@@ -108,12 +106,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#1e1e23',
-  },
-  containerBckgrnd: {
-    flex: 1,
-    position: 'absolute',
-    backgroundColor: 'red',
-    marginTop: 50,
   },
   animatedView: {
     backgroundColor: 'white',
