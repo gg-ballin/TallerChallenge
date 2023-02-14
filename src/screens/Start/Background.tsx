@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import MenuBtn from '../../components/MenuBtn';
 import {isAndroid, IS_X} from '../../utils/constants';
-import { scale } from '../../utils/scale';
+import {scale} from '../../utils/scale';
 
 interface Props {
   navigation?: any;

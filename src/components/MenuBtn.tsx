@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import { scale } from '../utils/scale';
+import {scale} from '../utils/scale';
 
 interface Props {
   title: string;

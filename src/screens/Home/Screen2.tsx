@@ -1,11 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-interface Props {
-  navigation: any
-}
-
-const Screen_2 = ({navigation}: Props) => {
+const Screen_2 = () => {
   return (
     <View style={styles.container}>
       <Text style={{color: 'white'}}>Second screen</Text>
